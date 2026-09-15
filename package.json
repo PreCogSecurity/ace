@@ -1,9 +1,17 @@
 {
     "name": "ace",
-    "description": "Ajax.org Code Editor is a full featured source code highlighting editor that powers the Cloud9 IDE",
+    "description": "Ace (Ajax.org Cloud9 Editor) is a standalone, embeddable JavaScript code editor with syntax highlighting for over 120 languages, themes, and keybindings (Vim, Emacs). It can be used as a textarea replacement in any web page or JavaScript application.",
     "version": "1.2.3",
     "homepage": "http://github.com/ajaxorg/ace",
-    "engines": {"node": ">= 0.6.0"},
+    "keywords": [
+        "editor",
+        "code-editor",
+        "syntax-highlighting",
+        "textarea-replacement",
+        "browser",
+        "javascript"
+    ],
+    "engines": {"node": ">= 18.0.0"},
     "author": "Fabian Jakobs <fabian@c9.io>",
     "main": "lib/ace",
     "repository": {
@@ -14,11 +22,12 @@
         "mime": "1.2.x"
     },
     "devDependencies": {
-        "asyncjs": "0.0.x",
-        "node-jsdom": "3.1.5",
-        "amd-loader": "~0.0.4",
+        "amd-loader": "~0.0.8",
+        "architect-build": "0.1.1",
+        "asyncjs": "0.0.13",
         "dryice": "0.4.11",
-        "architect-build": "https://github.com/c9/architect-build/tarball/17268dce65"
+        "eslint": "^8.57.0",
+        "jsdom": "^26.1.0"
     },
     "mappings": {
         "ace": "."
@@ -32,6 +41,7 @@
     },
     "scripts": {
         "start": "node static.js",
-        "test": "node lib/ace/test/all.js"
+        "test": "node lib/ace/test/all.js",
+        "lint": "eslint \"lib/ace/**/*.js\""
     }
 }
